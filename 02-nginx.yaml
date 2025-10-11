@@ -35,12 +35,14 @@
   hosts: frontend
   become: yes
   tasks:
-  - name: Install nginx
-    ansible.builtin.package:
-      state: present
 
-  - name: Start nginx
+
+  - name: Stop nginx
     ansible.builtin.service:
       name: nginx
-      state: started
-      enabled: yes 
+      state: stopped
+      enabled: no 
+
+    - name: Uninstall nginx
+    ansible.builtin.package:
+      state: absent    
