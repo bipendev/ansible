@@ -35,8 +35,6 @@
   hosts: frontend
   become: yes
   tasks:
-
-
   - name: Stop nginx
     ansible.builtin.service:
       name: nginx
@@ -44,5 +42,5 @@
       enabled: no 
 
     - name: Uninstall nginx
-    ansible.builtin.package:
-      state: absent    
+      ansible.builtin.package:
+        state: absent    
