@@ -43,4 +43,5 @@
 
   - name: Uninstall nginx
     ansible.builtin.package:
+      name: nginx
       state: absent    
