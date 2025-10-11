@@ -1,5 +1,5 @@
 -name: ping the server
-  hosts: [frontend]
+  hosts: frontend
   #list of tasks 
   tasks:
   - name: ping
