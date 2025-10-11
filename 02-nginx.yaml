@@ -16,32 +16,32 @@
 
 # Install nginx
 
-# - name: Install and start nginx
-#   hosts: frontend
-#   become: yes
-#   tasks:
-#   - name : Install nginx
-#     ansible.builtin.package:
-#       name: nginx
-#       state: present
-
-#   - name: Start nginx
-#     ansible.builtin.service:
-#       name: nginx
-#       enabled: yes 
-
-# #Uninstall
-- name: Stop and uninstall nginx
+- name: Install and start nginx
   hosts: frontend
   become: yes
   tasks:
-  - name: Stop nginx
-    ansible.builtin.service:
-      name: nginx
-      state: stopped
-      enabled: no 
-
-  - name: Uninstall nginx
+  - name : Install nginx
     ansible.builtin.package:
       name: nginx
-      state: absent    
+      state: present
+
+  - name: Start nginx
+    ansible.builtin.service:
+      name: nginx
+      enabled: yes 
+
+# #Uninstall
+# - name: Stop and uninstall nginx
+#   hosts: frontend
+#   become: yes
+#   tasks:
+#   - name: Stop nginx
+#     ansible.builtin.service:
+#       name: nginx
+#       state: stopped
+#       enabled: no 
+
+#   - name: Uninstall nginx
+#     ansible.builtin.package:
+#       name: nginx
+#       state: absent    
